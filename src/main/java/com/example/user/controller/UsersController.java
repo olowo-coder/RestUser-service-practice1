@@ -50,4 +50,11 @@ public class UsersController {
     public String getTest(){
         return this.testValue;
     }
+
+    @GetMapping("/para")
+    public String getUserWithParam(@RequestParam(value = "page", defaultValue = "5") Long page,
+                                   @RequestParam(value = "limit") Long limitPage){
+
+        return "the Page is: " + page + " and the Limit is: " + limitPage;
+    }
 }
